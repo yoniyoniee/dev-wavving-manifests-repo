@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wavving-dev
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wavving-dev
+  template:
+    metadata:
+      labels:
+        app: wavving-dev
+    spec:
+      containers:
+        - name: wavving
+          image: 639406848386.dkr.ecr.ap-northeast-2.amazonaws.com/wavving-dev:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 250m
+            limits:
+              cpu: 500m
