@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: wavving-dev
+  name: wavving-dev-service
   annotations:
     alb.ingress.kubernetes.io/healthcheck-path: "/"
 spec:

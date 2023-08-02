@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-    name: "dev-ingress"
+    name: wavving-dev-ingress
     namespace: default
     annotations:
       kubernetes.io/ingress.class: alb
@@ -18,6 +18,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: "wavving-dev"
+                name: wavving-dev-service
                 port:
                   number: 80
